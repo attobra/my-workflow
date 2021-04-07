@@ -41,3 +41,43 @@ console.log(amplitude);
 //2) breaking up into sub-problems
 //how to merge the 2 arrays
 */
+/*
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temp',
+    unit: 'kelvin',
+    value: Number(prompt('degrees in celcius')),
+  };
+  console.table(measurement);
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+
+console.log(measureKelvin());
+*/
+
+const temps1 = [17, 21, 23];
+const temps2 = [12, 5, -5, 0, 4];
+
+//1) understand the problem
+// - array transformed to strings separated by ...
+// - x days? index + 1
+
+//2) breaking up the problem
+// - transform array into string
+// - transform each element to strings with C
+// - strings needed to contain index+1 day
+// - add ... between elements and start and end of string
+
+const printForecast = function (arr) {
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    str += `${arr[i]} C in ${i + 1} days ... `;
+    //console.log(`${arr[i]} C in ${i + 1} days`);
+  }
+
+  console.log('...' + str);
+};
+
+printForecast(temps1);
+printForecast(temps2);
